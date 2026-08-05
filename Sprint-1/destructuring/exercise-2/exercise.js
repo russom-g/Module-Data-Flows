@@ -80,7 +80,7 @@ function displayGryffindor(hogwarts) {
 
 displayGryffindor(hogwarts);
 
-function displayTeacherWithPets(hogwarts) {
+function displayTeachers(hogwarts) {
   const teachers = hogwarts.filter(
     ({ occupation, pet }) => occupation === "Teacher" && pet !== null
   );
@@ -89,4 +89,4 @@ function displayTeacherWithPets(hogwarts) {
   });
 }
 
-displayTeacherWithPets(hogwarts);
+displayTeachers(hogwarts);

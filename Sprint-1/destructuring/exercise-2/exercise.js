@@ -74,10 +74,19 @@ let hogwarts = [
 function displayGryffindor(hogwarts) {
   const people = hogwarts.filter(({ house }) => house === "Gryffindor");
   people.forEach(({ firstName, lastName }) => {
-  console.log(`${firstName} ${lastName}`);
+    console.log(`${firstName} ${lastName}`);
   });
 }
 
-
 displayGryffindor(hogwarts);
 
+function displayTeacherWithPets(hogwarts) {
+  const teachers = hogwarts.filter(
+    ({ occupation, pet }) => occupation === "Teacher" && pet !== null
+  );
+  teachers.forEach(({ firstName, lastName }) => {
+    console.log(`${firstName} ${lastName}`);
+  });
+}
+
+displayTeacherWithPets(hogwarts);

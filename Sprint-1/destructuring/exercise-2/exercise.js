@@ -70,3 +70,14 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+function displayGryffindor(hogwarts) {
+  const people = hogwarts.filter(({ house }) => house === "Gryffindor");
+  people.forEach(({ firstName, lastName }) => {
+  console.log(`${firstName} ${lastName}`);
+  });
+}
+
+
+displayGryffindor(hogwarts);
+

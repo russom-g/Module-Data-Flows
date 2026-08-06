@@ -78,8 +78,6 @@ function getGryffindorMembers(hogwarts) {
   });
 }
 
-getGryffindorMembers(hogwarts);
-
 function getTeachersWithPets(hogwarts) {
   const teachers = hogwarts.filter(
     ({ occupation, pet }) => occupation === "Teacher" && pet !== null
@@ -88,5 +86,8 @@ function getTeachersWithPets(hogwarts) {
     console.log(`${firstName} ${lastName}`);
   });
 }
+getGryffindorMembers(hogwarts);
+
+console.log();
 
 getTeachersWithPets(hogwarts);

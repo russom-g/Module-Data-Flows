@@ -11,6 +11,9 @@ function printReceipt(order) {
   let total = 0;
   console.log("QTY ITEM TOTAL");
   order.forEach(({ quantity, itemName, unitPricePence }) => {
+    let itemTotal = quantity * unitPricePence;
+    total = total + itemTotal;
+    let priceInPounds = itemTotal / 100;
     console.log(`${quantity} ${itemName} ${unitPricePence}`);
   });
 }

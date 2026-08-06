@@ -6,3 +6,14 @@ let order = [
   { itemName: "Hot Coffee", quantity: 2, unitPricePence: 100 },
   { itemName: "Hash Brown", quantity: 4, unitPricePence: 40 },
 ];
+
+function printReceipt(order) {
+  order.forEach(({ quantity, itemName, unitPricePence }) => {
+    console.log(`${quantity} ${itemName} ${unitPricePence}`);
+  });
+}
+
+printReceipt(order);
+// 1. Log each item quantity and name.
+// 2. Log total cost.
+// 3. 

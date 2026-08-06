@@ -9,16 +9,28 @@ let order = [
 
 function printReceipt(order) {
   let total = 0;
-  console.log("QTY ITEM TOTAL");
+
+  console.log("QTY".padEnd(8) + "ITEM".padEnd(22) + "TOTAL");
+  
   order.forEach(({ quantity, itemName, unitPricePence }) => {
+    
     let itemTotal = quantity * unitPricePence;
+    
     total = total + itemTotal;
+    
     let priceInPounds = itemTotal / 100;
-    console.log(`${quantity} ${itemName} ${unitPricePence}`);
+    
+    console.log(
+      quantity.toString().padEnd(8) +
+        itemName.padEnd(22) +
+        priceInPounds.toFixed(2)
+    );
   });
+
+  console.log("\nTotal: " + (total / 100).toFixed(2));
 }
 
 printReceipt(order);
 // 1. Log each item quantity and name.
 // 2. Log total cost.
-// 3. 
+// 3.

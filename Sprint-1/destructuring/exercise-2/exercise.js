@@ -71,16 +71,16 @@ let hogwarts = [
   },
 ];
 
-function displayGryffindor(hogwarts) {
+function getGryffindorMembers(hogwarts) {
   const people = hogwarts.filter(({ house }) => house === "Gryffindor");
   people.forEach(({ firstName, lastName }) => {
     console.log(`${firstName} ${lastName}`);
   });
 }
 
-displayGryffindor(hogwarts);
+getGryffindorMembers(hogwarts);
 
-function displayTeachers(hogwarts) {
+function getTeachersWithPets(hogwarts) {
   const teachers = hogwarts.filter(
     ({ occupation, pet }) => occupation === "Teacher" && pet !== null
   );
@@ -89,4 +89,4 @@ function displayTeachers(hogwarts) {
   });
 }
 
-displayTeachers(hogwarts);
+getTeachersWithPets(hogwarts);

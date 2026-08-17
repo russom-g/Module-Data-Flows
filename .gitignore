@@ -1,4 +1,4 @@
 node_modules
 **/node_modules
 .DS_Store
-**/.DS_Store
+**/.DS_StoreSprint-1/destructuring/

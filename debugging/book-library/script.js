@@ -19,6 +19,7 @@ function populateStorage() {
       "127",
       true
     );
+
     myLibrary.push(book1);
     myLibrary.push(book2);
   }
@@ -67,6 +68,7 @@ function render() {
     let pagesCell = row.insertCell(2);
     let wasReadCell = row.insertCell(3);
     let deleteCell = row.insertCell(4);
+    
     titleCell.innerHTML = myLibrary[i].title;
     authorCell.innerHTML = myLibrary[i].author;
     pagesCell.innerHTML = myLibrary[i].pages;
@@ -76,6 +78,7 @@ function render() {
 
     changeBut.className = "btn btn-success";
     wasReadCell.appendChild(changeBut);
+    
     let readStatus = "";
     if (myLibrary[i].check == false) {
       readStatus = "No";
@@ -94,6 +97,7 @@ function render() {
 
     deleteCell.appendChild(delButton);
     delButton.className = "btn btn-warning";
+    
     delButton.innerHTML = "Delete";
 
     delButton.addEventListener("click", function () {

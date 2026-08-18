@@ -1,3 +1,8 @@
+function setup() {
+  populateStorage();
+  render();
+}
+
 let myLibrary = [];
 
 window.addEventListener("load", function (e) {

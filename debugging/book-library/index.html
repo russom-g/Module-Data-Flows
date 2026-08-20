@@ -48,6 +48,7 @@
           class="form-control"
           id="pages"
           name="pages"
+          min="1"
           required
         >
         <label class="form-check-label">
@@ -56,17 +57,19 @@
             class="form-check-input"
             id="check"
             value=""
-          >Read
+          >
+          Read
         </label>
-        <input
-          type="submit"
-          value="Submit"
+        <button
+          type="button"
           class="btn btn-primary"
-          onclick="addBook()"
+          id="add-book"
         >
-      </div>
-    </div>
-
+          Submit
+        </button>
+        </div>
+        </div>
+      <div id="message"></div>
     <table class="table" id="display">
       <thead class="thead-dark">
         <tr>
@@ -77,8 +80,7 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
-      </tbody>
+      <tbody id="book-list"></tbody>
     </table>
   </body>
 </html>

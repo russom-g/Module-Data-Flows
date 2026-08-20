@@ -5,23 +5,12 @@ function setup() {
   render();
 }
 
-window.addEventListener("load", function (e) {
-  populateStorage();
-  render();
-});
+window.addEventListener("load", setup) 
 
 function populateStorage() {
-  if (myLibrary.length == 0) {
-    let book1 = new Book("Robison Crusoe", "Daniel Defoe", "252", true);
-    let book2 = new Book(
-      "The Old Man and the Sea",
-      "Ernest Hemingway",
-      "127",
-      true
-    );
-
-    myLibrary.push(book1);
-    myLibrary.push(book2);
+  if (myLibrary.length === 0) {
+    myLibrary.push(new Book("Robinson Crusoe", "Daniel Defoe", "252", true));
+    myLibrary.push(new Book("The Old Man and the Sea","Ernest Hemingway", "127", true ));
   }
 }
 
@@ -30,28 +19,30 @@ const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const check = document.getElementById("check");
 
-//check the right input from forms and if its ok -> add the new book (object in array)
-//via Book function and start render function
-function submit() {
-  if (title.value == "" || author.value == "" || pages.value == "") {
-    alert("Please fill all fields!");
-    return false;
-  } else {
-    let book = new Book(title.value, author.value, pages.value, check.checked);
-    myLibrary.push(book);
-    render();
-  }
-}
-
-function Book(title, author, pages, check) {
+function Book(title, author, pages, wasRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.check = check;
+  this.check = wasRead;
 }
 
+//check the right input from forms and if its ok -> add the new book (object in array)
+//via Book function and start render function
+function submit() {
+  if (!title.value || !author.value || !pages.value ) {
+    alert("Please fill all fields!");
+    return false;
+  } 
+  if (isNaN(pages.value) || Number(pages.value) <= 0) {
+    alert("Pages must be a valid number!");
+    return false;
+  }
+    myLibrary.push(new Book(title.value, author.value, Number(pages.value), check.checked));
+    render();
+  }
+
 function render() {
-  let table = document.getElementById("display");
+  const table = document.getElementById("display");
   let rowsNumber = table.rows.length;
   //delete old table
   for (let n = rowsNumber - 1; n > 0; n--) {

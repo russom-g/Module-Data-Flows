@@ -1,4 +1,4 @@
-let myLibrary = [];
+const myLibrary = [];
 
 function Book(title, author, pages, wasRead) {
   this.title = title;
@@ -14,11 +14,6 @@ const readInput = document.getElementById("check");
 const message = document.getElementById("message");
 const bookList = document.getElementById("book-list");
 const addBookButton = document.getElementById("add-book");
-
-function setup() {
-  addDefaultBooks();
-  render();
-}
 
 function addDefaultBooks() {
   if (myLibrary.length === 0) {
@@ -92,6 +87,6 @@ function render() {
   }
 }
 
-window.addEventListener("load", setup);
-
+addDefaultBooks();
+render();
 addBookButton.addEventListener("click", addBook);

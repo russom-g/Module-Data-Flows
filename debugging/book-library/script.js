@@ -23,7 +23,7 @@ function Book(title, author, pages, wasRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.check = wasRead;
+  this.wasRead = wasRead;
 }
 
 //check the right input from forms and if its ok -> add the new book (object in array)
@@ -43,13 +43,13 @@ function submit() {
 
 function render() {
   const table = document.getElementById("display");
-  let rowsNumber = table.rows.length;
+  const rowsNumber = table.rows.length;
   //delete old table
   for (let n = rowsNumber - 1; n > 0; n--) {
     table.deleteRow(n);
   }
   //insert updated row and cells
-  let length = myLibrary.length;
+  const length = myLibrary.length;
 
   for (let i = 0; i < length; i++) {
     let row = table.insertRow(1);

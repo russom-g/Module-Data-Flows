@@ -28,7 +28,7 @@ function Book(title, author, pages, wasRead) {
 
 //check the right input from forms and if its ok -> add the new book (object in array)
 //via Book function and start render function
-function submit() {
+function addBook() {
   if (!title.value || !author.value || !pages.value ) {
     alert("Please fill all fields!");
     return false;
@@ -60,9 +60,9 @@ function render() {
     let wasReadCell = row.insertCell(3);
     let deleteCell = row.insertCell(4);
     
-    titleCell.innerHTML = myLibrary[i].title;
-    authorCell.innerHTML = myLibrary[i].author;
-    pagesCell.innerHTML = myLibrary[i].pages;
+    titleCell.textContent = myLibrary[i].title;
+    authorCell.textContent = myLibrary[i].author;
+    pagesCell.textContent = myLibrary[i].pages;
 
     //add and wait for action for read/unread button
     let changeBut = document.createElement("button");
@@ -70,7 +70,7 @@ function render() {
     changeBut.className = "btn btn-success";
     wasReadCell.appendChild(changeBut);
     
-    const readStatus = myLibrary[i].check ? "No" : "Yes";
+    const readStatus = myLibrary[i].check ? "Yes" : "No";
     
     changeBut.innerText = readStatus;
 
@@ -85,7 +85,7 @@ function render() {
     deleteCell.appendChild(delButton);
     delButton.className = "btn btn-warning";
     
-    delButton.innerHTML = "Delete";
+    delButton.textContent = "Delete";
 
     delButton.addEventListener("click", function () {
       alert(`You've deleted title: ${myLibrary[i].title}`);
